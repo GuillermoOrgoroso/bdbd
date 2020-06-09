@@ -74,4 +74,30 @@ Public Class Form1
 
 
     End Sub
+
+    Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
+        Dim conexion As New OdbcConnection(stringDeConexion)
+
+        conexion.Open()
+
+        Dim comando = New OdbcCommand
+
+        comando.CommandText = "DELETE FROM Personita WHERE id = " + txtID.Text + ""
+
+        MsgBox(comando.CommandText)
+        comando.Connection = conexion
+
+        comando.ExecuteNonQuery()
+
+        MsgBox("Persona eliminada correctamente")
+
+
+
+
+
+
+
+
+
+    End Sub
 End Class
