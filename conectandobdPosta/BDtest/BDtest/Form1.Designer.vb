@@ -28,7 +28,7 @@ Partial Class Form1
         Me.btnBuscar = New System.Windows.Forms.Button()
         Me.btnSiguiente = New System.Windows.Forms.Button()
         Me.btnListar = New System.Windows.Forms.Button()
-        Me.btnCortar = New System.Windows.Forms.Button()
+        Me.btnContar = New System.Windows.Forms.Button()
         Me.txtID = New System.Windows.Forms.TextBox()
         Me.txtMail = New System.Windows.Forms.TextBox()
         Me.txtApellido = New System.Windows.Forms.TextBox()
@@ -95,14 +95,14 @@ Partial Class Form1
         Me.btnListar.Text = "Listar"
         Me.btnListar.UseVisualStyleBackColor = True
         '
-        'btnCortar
+        'btnContar
         '
-        Me.btnCortar.Location = New System.Drawing.Point(270, 207)
-        Me.btnCortar.Name = "btnCortar"
-        Me.btnCortar.Size = New System.Drawing.Size(88, 22)
-        Me.btnCortar.TabIndex = 6
-        Me.btnCortar.Text = "Cortar"
-        Me.btnCortar.UseVisualStyleBackColor = True
+        Me.btnContar.Location = New System.Drawing.Point(270, 207)
+        Me.btnContar.Name = "btnContar"
+        Me.btnContar.Size = New System.Drawing.Size(88, 22)
+        Me.btnContar.TabIndex = 6
+        Me.btnContar.Text = "Contar"
+        Me.btnContar.UseVisualStyleBackColor = True
         '
         'txtID
         '
@@ -190,7 +190,7 @@ Partial Class Form1
         Me.Controls.Add(Me.txtApellido)
         Me.Controls.Add(Me.txtMail)
         Me.Controls.Add(Me.txtID)
-        Me.Controls.Add(Me.btnCortar)
+        Me.Controls.Add(Me.btnContar)
         Me.Controls.Add(Me.btnListar)
         Me.Controls.Add(Me.btnSiguiente)
         Me.Controls.Add(Me.btnBuscar)
@@ -211,7 +211,7 @@ Partial Class Form1
     Friend WithEvents btnBuscar As Button
     Friend WithEvents btnSiguiente As Button
     Friend WithEvents btnListar As Button
-    Friend WithEvents btnCortar As Button
+    Friend WithEvents btnContar As Button
     Friend WithEvents txtID As TextBox
     Friend WithEvents txtMail As TextBox
     Friend WithEvents txtApellido As TextBox

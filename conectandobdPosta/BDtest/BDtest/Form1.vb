@@ -11,11 +11,11 @@ Public Class Form1
         conexion.Open()
 
         Dim comando As New OdbcCommand
-        comando.CommandText = "SELECT * FROM Persona"
+        comando.CommandText = "SELECT * FROM Personita"
 
         comando.Connection = conexion
 
-        Me.lector = comando.ExecuteReader
+        Me.lector = comando.ExecuteReader()
 
 
 
@@ -55,21 +55,15 @@ Public Class Form1
         conexion.Open()
 
         Dim comando = New OdbcCommand
-        MsgBox(comando.CommandText)
 
+        comando.CommandText = "UPDATE Personita SET nombre = '" + txtNombre.Text + "', apellido = '" + txtApellido.Text + "', mail = '" + txtMail.Text + "' WHERE id = " + txtID.Text + ""
+
+        MsgBox(comando.CommandText)
         comando.Connection = conexion
 
         comando.ExecuteNonQuery()
 
         MsgBox("Datos modificados correctamente ATRRRRR")
-
-
-
-
-        comando.CommandText = "UPDATE Personita SET nombre = '" + txtNombre.Text + "', apellido = '" + txtApellido.Text + "', mail = '" + txtMail.Text + "' WHERE id = " + txtID.Text + ""
-
-
-
 
 
 
@@ -90,14 +84,41 @@ Public Class Form1
         comando.ExecuteNonQuery()
 
         MsgBox("Persona eliminada correctamente")
+        MsgBox("hola")
+
+
+    End Sub
+
+    Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
+        obtenerDatos()
+
+    End Sub
+
+    Private Sub btnSiguiente_Click(sender As Object, e As EventArgs) Handles btnSiguiente.Click
+        lector.Read()
+        txtID.Text = lector(0).ToString()
+        txtNombre.Text = lector(1).ToString()
+        txtApellido.Text = lector(2).ToString()
+        txtMail.Text = lector(3).ToString()
 
 
 
+    End Sub
 
+    Private Sub btnListar_Click(sender As Object, e As EventArgs) Handles btnListar.Click
 
+        obtenerDatos()
+
+        Dim tablita As New DataTable
+
+        tablita.Load(Me.lector)
+
+        GrillaDatos.DataSource = tablita
 
 
 
 
     End Sub
+
+
 End Class
