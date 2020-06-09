@@ -48,4 +48,30 @@ Public Class Form1
 
 
     End Sub
+
+    Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
+        Dim conexion As New OdbcConnection(stringDeConexion)
+
+        conexion.Open()
+
+        Dim comando = New OdbcCommand
+        MsgBox(comando.CommandText)
+
+        comando.Connection = conexion
+
+        comando.ExecuteNonQuery()
+
+        MsgBox("Datos modificados correctamente ATRRRRR")
+
+
+
+
+        comando.CommandText = "UPDATE Personita SET nombre = '" + txtNombre.Text + "', apellido = '" + txtApellido.Text + "', mail = '" + txtMail.Text + "' WHERE id = " + txtID.Text + ""
+
+
+
+
+
+
+    End Sub
 End Class
